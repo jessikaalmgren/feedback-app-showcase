@@ -29,13 +29,13 @@ export const featureReducer = (state, action) => {
 
 // LOGGER TO TRACK ACTIONS IN THE APP
 const actionLogger = (actionType, component, endpoint, payload, error = null) => {
-  console.log(`[Action: ${actionType}]`)
-  console.log(` - Initiated by Component: ${component}`)
-  console.log(` - API Endpoint: ${endpoint}`)
+  //console.log(`[Action: ${actionType}]`)
+  //console.log(` - Initiated by Component: ${component}`)
+  //console.log(` - API Endpoint: ${endpoint}`)
   if (error) {
-    console.log(` - Error: ${error.message}`)
+    //console.log(` - Error: ${error.message}`)
   } else {
-    console.log(` - Payload:`, payload)
+    //console.log(` - Payload:`, payload)
   }
 }
 
@@ -55,7 +55,7 @@ export const FeatureContextProvider = ({ children }) => {
       dispatch({ type: 'SET_FEATURES', payload: json })
     } catch (error) {
       actionLogger('FETCH_FEATURES', component, endpoint, { boardId }, error)
-      console.error('Error fetching features:', error)
+      //console.error('Error fetching features:', error)
     }
   }, [])
 
@@ -81,7 +81,7 @@ export const FeatureContextProvider = ({ children }) => {
       return { success: true, data: json }
     } catch (error) {
       actionLogger('ACCEPT_FEATURE', component, endpoint, payload, error)
-      console.error('Error accepting feature:', error)
+      //console.error('Error accepting feature:', error)
       return { success: false, error: 'Something went wrong, please try again' }
     }
   }, [])
@@ -107,7 +107,7 @@ export const FeatureContextProvider = ({ children }) => {
       return { success: true, data: json }
     } catch (error) {
       actionLogger('DENY_FEATURE', component, endpoint, payload, error)
-      console.error('Error denying feature:', error)
+      //console.error('Error denying feature:', error)
       return { success: false, error: 'Something went wrong, please try again' }
     }
   }, [])
@@ -140,7 +140,7 @@ export const FeatureContextProvider = ({ children }) => {
         return { success: true, data: json }
       } catch (error) {
         actionLogger('DROP_FEATURE', component, endpoint, payload, error)
-        console.error('Error updating feature:', error)
+        //console.error('Error updating feature:', error)
         return { success: false, error: 'Something went wrong, please try again' }
       }
     },
@@ -179,7 +179,7 @@ export const FeatureContextProvider = ({ children }) => {
         return { success: true, data: json }
       } catch (error) {
         actionLogger('UPDATE_WON_FEATURE', component, endpoint, payload, error)
-        console.error('Error updating feature:', error)
+        //console.error('Error updating feature:', error)
         return { success: false, error: 'Something went wrong, please try again' }
       }
     },
@@ -216,7 +216,7 @@ export const FeatureContextProvider = ({ children }) => {
         return { success: true, data: json }
       } catch (error) {
         actionLogger('UPDATE_WON_FEATURE', component, endpoint, payload, error)
-        console.error('Error updating feature:', error)
+        //console.error('Error updating feature:', error)
         return { success: false, error: 'Something went wrong, please try again' }
       }
     },
@@ -255,7 +255,7 @@ export const FeatureContextProvider = ({ children }) => {
         return { success: true, data: json }
       } catch (error) {
         actionLogger('UPDATE_DROPPED_FEATURE', component, endpoint, payload, error)
-        console.error('Error updating dropped feature:', error)
+        //console.error('Error updating dropped feature:', error)
         return { success: false, error: 'Something went wrong, please try again' }
       }
     },
@@ -282,7 +282,7 @@ export const FeatureContextProvider = ({ children }) => {
       return { success: true, data: json }
     } catch (error) {
       actionLogger('SEND_FEATURE', component, endpoint, featureData, error)
-      console.error('Error sending feature:', error)
+      //console.error('Error sending feature:', error)
       return { success: false, error: 'Something went wrong, please try again' }
     }
   }, [])
@@ -306,7 +306,7 @@ export const FeatureContextProvider = ({ children }) => {
       return { success: true, data: json }
     } catch (error) {
       actionLogger('VOTE_ON_FEATURE', component, endpoint, payload, error)
-      console.error('Error voting on feature:', error)
+      //console.error('Error voting on feature:', error)
       return { success: false, error: 'Something went wrong, please try again' }
     }
   }, [])

@@ -1,40 +1,32 @@
 import { useEffect, useRef } from 'react'
 
 const Toast = ({ message, onClose, type }) => {
-  const timerRef = useRef(null) // För att hålla koll på timern
+  const timerRef = useRef(null)
 
   useEffect(() => {
-    // Om det finns en tidigare timer, stoppa den innan vi sätter en ny
     if (timerRef.current) {
-      // console.log('Stopping old timer')
       clearTimeout(timerRef.current)
     }
 
-    // Sätt en ny timer när en toast visas
     timerRef.current = setTimeout(() => {
-      // console.log('Toast closed after 5 seconds')
-      onClose() // Stänger toasten efter 5 sekunder
+      onClose() // Closing the toast after 5 sec
     }, 5000)
 
-    // console.log('New timer set:', timerRef.current)
-
-    // Rensa timer om komponenten tas bort eller om message/type förändras
     return () => {
       if (timerRef.current) {
-        // console.log('Clearing timer on unmount or prop change')
-        clearTimeout(timerRef.current) // Rensa timer för att förhindra minnesläckage
+        clearTimeout(timerRef.current)
       }
     }
-  }, [message, type]) // Kör om effekten om message eller type ändras
+  }, [message, type])
 
-  let toastClass = 'bg-gray-50 text-gray-700' // Default toast
+  let toastClass = 'bg-gray-50 text-gray-700'
 
   if (type === 'success') {
-    toastClass = 'bg-green-50 text-green-700' // Success toast
+    toastClass = 'bg-green-50 text-green-700'
   } else if (type === 'error') {
-    toastClass = 'bg-red-50 text-red-700' // Error toast
+    toastClass = 'bg-red-50 text-red-700'
   } else if (type === 'information') {
-    toastClass = 'bg-blue-50 text-blue-700 border border-gray-500' // Information toast
+    toastClass = 'bg-blue-50 text-blue-700 border border-gray-500'
   }
 
   return (

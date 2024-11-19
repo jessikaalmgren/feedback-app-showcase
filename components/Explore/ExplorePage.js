@@ -110,7 +110,7 @@ const ExplorePage = () => {
         // Hantera felmeddelande
       }
     } catch (error) {
-      console.error('Error sending board data update', error)
+      //console.error('Error sending board data update', error)
       // Hantera fel
     }
 

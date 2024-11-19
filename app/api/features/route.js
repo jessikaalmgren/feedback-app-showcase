@@ -36,7 +36,7 @@ export async function GET() {
     // Return all boards with their features as JSON
     return NextResponse.json(boardsData)
   } catch (error) {
-    console.error('Error fetching boards:', error)
+    //console.error('Error fetching boards:', error)
     return NextResponse.json({ error: error.message })
   }
 }

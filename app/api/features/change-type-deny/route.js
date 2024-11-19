@@ -21,7 +21,7 @@ export async function PUT(request) {
     // Return a response with the updated document
     return NextResponse.json(updatedFeature)
   } catch (error) {
-    console.error('Error recording vote:', error)
+    //console.error('Error recording vote:', error)
     return NextResponse.json({ error: 'Failed to record vote' })
   }
 }

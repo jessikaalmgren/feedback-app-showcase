@@ -55,7 +55,7 @@ const AdminVotingFeature = () => {
       closeModal(modalId)
       setSucessMessageWon(strings.successMessages.featureWon)
     } else {
-      console.error(strings.errorMessages.error, error)
+      //console.error(strings.errorMessages.error, error)
       setErrorMessage(strings.errorMessages.error)
     }
   }
@@ -72,7 +72,7 @@ const AdminVotingFeature = () => {
       closeModal(modalId)
       setSucessMessageDropped(strings.successMessages.featureDropped)
     } else {
-      console.error(strings.errorMessages.error, error)
+      //console.error(strings.errorMessages.error, error)
       setErrorMessage(strings.errorMessages.error)
     }
   }

@@ -19,12 +19,12 @@ const BoardSettings = () => {
       </div>
       <div>
         <div className="p-2 flex flex-row gap-2 items-center">
-          <p className="font-semibold text-md">{strings.boardSpecific.description}</p>
+          <p className="font-semibold text-md">{strings.boardSpecific.boardDescription}</p>
         </div>
         <div>{boardData && <div className="text-xs pl-2">{boardData.description}</div>}</div>
       </div>
       <div className="pt-4">
-        <div className="p-2">
+        {/* <div className="p-2">
           <div className="label">
             <span className="label-text">{strings.boardSpecific.changeTitle}</span>
           </div>
@@ -36,8 +36,8 @@ const BoardSettings = () => {
             />
             <button className="text-sm border rounded-xl pl-2 pr-2">{strings.buttons.save}</button>
           </div>
-        </div>
-        <div className="p-2">
+        </div> */}
+        {/* <div className="p-2">
           <div className="label">
             <span className="label-text">{strings.boardSpecific.changeDescription}</span>
           </div>
@@ -49,7 +49,7 @@ const BoardSettings = () => {
             />
             <button className="text-sm border rounded-xl pl-2 pr-2">{strings.buttons.save}</button>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   )

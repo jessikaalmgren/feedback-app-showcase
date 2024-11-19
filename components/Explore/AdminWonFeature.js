@@ -52,7 +52,7 @@ const AdminWonFeature = () => {
       setVisibilityOption('')
       closeModal(modalId)
     } else {
-      console.error(strings.errorMessages.error, error)
+      //console.error(strings.errorMessages.error, error)
     }
   }
 

@@ -28,7 +28,7 @@ export async function POST(request) {
 
     return NextResponse.json(updatedFeature)
   } catch (error) {
-    console.error('Error recording vote:', error)
+    //console.error('Error recording vote:', error)
     return NextResponse.json({ error: 'Failed to record vote' })
   }
 }

@@ -22,7 +22,7 @@ export async function GET(request, { params }) {
 
     return NextResponse.json(boardData)
   } catch (error) {
-    console.error('Error fetching board:', error)
+    //console.error('Error fetching board:', error)
     return NextResponse.json({ error: 'Failed to fetch board data' })
   }
 }

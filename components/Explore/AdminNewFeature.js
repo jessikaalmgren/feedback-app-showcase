@@ -29,7 +29,7 @@ const AdminNewFeature = () => {
     if (success) {
       setSuccessMessageAccept(strings.successMessages.featureAccepted)
     } else {
-      console.error(strings.errorMessages.error, error)
+      //console.error(strings.errorMessages.error, error)
       setErrorMessage(strings.errorMessages.error)
     }
   }
@@ -40,7 +40,7 @@ const AdminNewFeature = () => {
     if (success) {
       setSuccessMessageDeny(strings.successMessages.featureDenied)
     } else {
-      console.error(strings.errorMessages.error, error)
+      //console.error(strings.errorMessages.error, error)
       setErrorMessage(strings.errorMessages.error)
     }
   }

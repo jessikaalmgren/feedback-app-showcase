@@ -38,13 +38,13 @@ export const boardReducer = (state, action) => {
 
 // LOGGER TO KEEP TRACK OF ACTIONS BEING EXECUTED
 const actionLogger = (actionType, component, endpoint, payload, error = null) => {
-  console.log(`[Action: ${actionType}]`)
-  console.log(` - Initiated by Component: ${component}`)
-  console.log(` - API Endpoint: ${endpoint}`)
+  //console.log(`[Action: ${actionType}]`)
+  //console.log(` - Initiated by Component: ${component}`)
+  //console.log(` - API Endpoint: ${endpoint}`)
   if (error) {
-    console.log(` - Error: ${error.message}`)
+    //console.log(` - Error: ${error.message}`)
   } else {
-    console.log(` - Payload:`, payload)
+    //console.log(` - Payload:`, payload)
   }
 }
 
@@ -67,7 +67,7 @@ export const BoardContextProvider = ({ children }) => {
       setIsFetched(true)
     } catch (error) {
       actionLogger('FETCH_BOARDS', component, endpoint, {}, error)
-      console.error('Error fetching boards:', error)
+      //console.error('Error fetching boards:', error)
     }
   }, [])
 
@@ -83,7 +83,7 @@ export const BoardContextProvider = ({ children }) => {
       actionLogger('SET_BOARD', component, endpoint, json)
     } catch (error) {
       actionLogger('FETCH_BOARD_BY_URL', component, endpoint, { customBoardUrl }, error)
-      console.error('Error fetching board data:', error)
+      //console.error('Error fetching board data:', error)
     }
   }, [])
 
