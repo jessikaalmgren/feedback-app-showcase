@@ -63,7 +63,7 @@ const VotingSection = () => {
   return (
     <div>
       <section className="pb-10 mb-10 pt-10 mt-[6.5rem] mx-auto w-[400px] lg:pt-16 lg:flex-grow rounded-xl p-6 bg-[#EDE7F6] h-[550px] overflow-y-auto lg:overflow-visible lg:relative">
-        <div className="flex items-center justify-center absolute top-[235px] lg:top-[-40px] left-1/2 lg:left-[188px] transform -translate-x-1/2 -translate-y-1/2">
+        <div className="flex items-center justify-center absolute top-[235px] lg:top-[-40px] left-1/2 lg:left-[193px] transform -translate-x-1/2 -translate-y-1/2">
           <Image src={votingIconBig} alt="Picture of the author" />
           <div className="badge badge-md w-[70px] bg-[#311B92] border-[#311B92] absolute left-1/2 top-[110px] -translate-x-1/2 -translate-y-1/2 text-xs text-neutral">
             {strings.featureSpecific.voting}

@@ -23,7 +23,7 @@ const WonSection = () => {
 
   return (
     <div>
-      <section className="pb-10 mb-10 pt-16 mt-[6.5rem] mx-auto w-[400px]  lg:pt-16 lg:flex-grow rounded-xl p-6 bg-[#E8F5E9] h-[550px] overflow-y-auto lg:overflow-visible lg:relative">
+      <section className="pb-10 mb-10 pt-16 mt-[6.5rem] mx-auto w-[400px] lg:pt-16 lg:flex-grow rounded-xl p-6 bg-[#E8F5E9] h-[550px] overflow-y-auto lg:overflow-visible lg:relative">
         <div className="flex items-center justify-center absolute top-[895px] lg:top-[-40px] left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <Image src={wonIconBig} alt="Picture of the author" />
           <div className="badge badge-md w-[70px] bg-[#1B5E20] border-[#1B5E20] absolute left-1/2 top-[110px] -translate-x-1/2 -translate-y-1/2 text-xs text-neutral">
