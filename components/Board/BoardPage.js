@@ -33,30 +33,32 @@ const BoardPage = () => {
 
   return (
     <div>
+      {/* Linking back to home page */}
+      <div className="flex flex-row justify-between pl-8 pr-8 pt-4">
+        <div className="lg:absolute lg:left-[150px] lg:top-12 ">
+          <Link href="/">
+            <button className="border-2 pt-2 pb-2 pr-4 pl-4 rounded-xl hover:bg-neutral-50 text-sm">
+              {strings.buttons.goBack}
+            </button>
+          </Link>
+        </div>
+        {/* Linking to the backend of the board where user can do more settings */}
+        <div className="lg:absolute right-[150px] top-12">
+          <Link href={`/${boardData.id}`} key={boardData.id}>
+            <button className="border-2 pt-2 pb-2 pr-4 pl-4 rounded-xl hover:bg-neutral-50 text-sm">
+              {strings.buttons.exploreBoard}
+            </button>
+          </Link>
+        </div>
+      </div>
       {/* Writing out the boards name and description on top of the board view */}
-      <div className="flex flex-col items-center mx-auto pt-8 pb-0 w-[600px] text-center">
+      <div className="flex flex-col items-center mx-auto pt-8 lg:pb-0 max-w-fit text-center pl-2 pr-2">
         <h1>{boardData.title}</h1>
         <p className="text-sm">{boardData.description}</p>
       </div>
-      {/* Linking back to home page */}
-      <div className="absolute left-[150px] top-12">
-        <Link href="/">
-          <button className="border-2 pt-2 pb-2 pr-4 pl-4 rounded-xl hover:bg-neutral-50 text-sm">
-            {strings.buttons.goBack}
-          </button>
-        </Link>
-      </div>
-      {/* Linking to the backend of the board where user can do more settings */}
-      <div className="absolute right-[150px] top-12">
-        <Link href={`/${boardData.id}`} key={boardData.id}>
-          <button className="border-2 pt-2 pb-2 pr-4 pl-4 rounded-xl hover:bg-neutral-50 text-sm">
-            {strings.buttons.exploreBoard}
-          </button>
-        </Link>
-      </div>
 
       {/* Displaying the sections of features */}
-      <div className="p-8 pt-0 m-6 rounded-xl mx-auto w-[500px] lg:w-[1280px] lg:grid lg:grid-cols-3 lg:gap-8">
+      <div className="p-8 pt-0 m-6 rounded-xl mx-auto max-w-fit lg:w-[1280px] lg:grid lg:grid-cols-3 lg:gap-8">
         <VotingSection />
         <WonSection />
         <DroppedSection />

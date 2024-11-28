@@ -125,7 +125,7 @@ const ExplorePage = () => {
   return (
     <div>
       <div>
-        <div className="relative top-8 left-[250px]">
+        <div className="lg:relative lg:top-8 lg:left-[250px] pl-8 pt-4">
           <Link href="/">
             {' '}
             <button className="pt-2 pb-2 pl-4 pr-4 border-2 rounded-xl hover:bg-neutral-50 text-sm">
@@ -253,78 +253,33 @@ const ExplorePage = () => {
                         <div className="flex flex-row">
                           <h3 className="font-bold text-lg pb-2 pr-2">Board settings</h3>
                         </div>
-                        <p>The title and description will be displayed on your board.</p>
-                        {boardData && boardData.boardUrl === null && (
-                          <div>
-                            <p className="text-xs pt-6">
-                              Decide your url name (Can only be done once)
-                            </p>
-                            <div className="flex flex-row pt-2">
-                              <p className="text-sm pt-2">mydomain.com/</p>
-                              <input
-                                type="text"
-                                placeholder="New title"
-                                className="input input-sm input-bordered w-full max-w-xs text-sm"
-                                value={customBoardId}
-                                onChange={(e) => {
-                                  setCustomBoardUrl(e.target.value)
-                                }}
-                              />
-                            </div>
-                          </div>
-                        )}
-                        {boardData && boardData.boardUrl !== null && (
-                          <div>
-                            <p className="text-xs pt-6">This is your url</p>
-                            <div className="flex flex-row pt-2">
-                              <p className="text-sm pt-2">mydomain.com/</p>
-                              <input
-                                type="text"
-                                value={boardData.boardUrl}
-                                className="input input-sm input-bordered w-full max-w-xs text-sm"
-                                disabled
-                              />
-                            </div>
-                          </div>
-                        )}
-                        <p className="text-sm pt-6 pb-2">Board title</p>
+                        <p>The title and description is displayed on your board.</p>
+                        <p className="text-sm pt-6 pb-2 font-bold">Board title</p>
                         {boardData && (
                           <div className="text-xs">
-                            <input
-                              type="text"
-                              value={tempTitle}
-                              onChange={handleTitleChange}
-                              className="input input-sm input-bordered w-full max-w-xs text-sm"></input>
+                            <p className="w-full max-w-xs text-sm">{boardData.title}</p>
                           </div>
                         )}
 
-                        <p className="text-sm pt-6 pb-2">Board description</p>
+                        <p className="text-sm pt-6 pb-2 font-bold">Board description</p>
                         {boardData && (
                           <div className="text-xs">
-                            <input
-                              type="text"
-                              value={tempDescription}
-                              onChange={handleDescriptionChange}
-                              className="input input-sm input-bordered w-full max-w-xs text-sm"></input>
+                            <p className=" w-full max-w-xs text-sm">{boardData.description}</p>
                           </div>
                         )}
-
-                        <div className="flex justify-center pt-6">
-                          <button onClick={handleUpdateBoard}>Save</button>
-                        </div>
                       </div>
                     </dialog>
                   </div>
                 </div>
                 <div className="">
-                  <button
-                    className="bg-neutral tabs-boxed p-2 w-[200px] text-xs hover:bg-neutral-content"
-                    onClick={goToOwnUrlPage}>
-                    <OpenInNewIcon
-                      sx={{ fontSize: '15px', marginRight: '4px', color: '#939393' }}
-                    />
-                    Preview Board
-                  </button>
+                  <Link href={`board/${boardData.id}`} key={boardData.id} className="w-full">
+                    <button className="bg-neutral tabs-boxed p-2 w-[200px] text-xs hover:bg-neutral-content">
+                      <OpenInNewIcon
+                        sx={{ fontSize: '15px', marginRight: '4px', color: '#939393' }}
+                      />
+                      Preview Board
+                    </button>
+                  </Link>
                 </div>
               </div>
               <div className="tabs">

@@ -16,7 +16,7 @@ const HeroSection = () => {
         <div className="hero w-full">
           <div className="hero-content w-full">
             {/* Grid container för boards */}
-            <div className="grid grid-cols-3 gap-8">
+            <div className="grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-8">
               {boards.length > 0 ? (
                 boards.map((board) => (
                   <Link href={`board/${board.id}`} key={board.id}>

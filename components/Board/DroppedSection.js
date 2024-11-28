@@ -26,8 +26,8 @@ const DroppedSection = () => {
 
   return (
     <div>
-      <section className="pb-10 mb-10 pt-16 mt-[6.5rem] lg:w-full lg:pt-16 lg:flex-grow rounded-xl p-6 bg-[#FFCDD2] h-[550px] overflow-y-auto lg:overflow-visible lg:relative">
-        <div className="flex items-center justify-center absolute top-[1595px] left-1/2 lg:top-[-40px] lg:left-[190px] transform -translate-x-1/2 -translate-y-1/2">
+      <section className="pb-10 mb-10 pt-16 mt-[6.5rem] mx-auto w-[400px] lg:pt-16 lg:flex-grow rounded-xl p-6 bg-[#FFCDD2] h-[550px] overflow-y-auto lg:overflow-visible lg:relative">
+        <div className="flex items-center justify-center absolute top-[1545px] left-1/2 lg:top-[-40px] lg:left-[190px] transform -translate-x-1/2 -translate-y-1/2">
           <Image src={droppedIconBig} alt="Picture of the author" />
           <div className="badge badge-md w-[70px] bg-[#B71C1C] border-[#B71C1C] absolute left-1/2 top-[110px] -translate-x-1/2 -translate-y-1/2 text-xs text-neutral">
             {strings.featureSpecific.dropped}
